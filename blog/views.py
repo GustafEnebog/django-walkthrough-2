@@ -6,7 +6,7 @@ from .models import Post
 # Create your views here.
 class PostList(generic.ListView):
     # Remove model = Post We can remove the model = Post as it is made redundant by the queryset 
-    queryset = Post.objects.all()
+    queryset = Post.objects.filter(status=1)    # before this row looked like this: queryset = Post.objects.all() but now we put a filter on it so that it not publish drafts!
     template_name = "post_list.html"
 
 # def my_blog(request):
