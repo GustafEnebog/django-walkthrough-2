@@ -19,7 +19,7 @@ from django.urls import path, include
 # Deleted becaseu we do not need it anymore since our blog now has its own URL: from blog.views import my_blog
 
 urlpatterns = [
-    path("", include("blog.urls"), name="blog-urls"),
-    path('summernote/', include('django_summernote.urls')),
     path('admin/', admin.site.urls),
+    path('summernote/', include('django_summernote.urls')),    
+    path("", include("blog.urls"), name="blog-urls"),
 ]
